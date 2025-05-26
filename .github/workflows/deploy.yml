@@ -8,8 +8,8 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     permissions:
-      contents: read,
-      pages: write,
+      contents: read
+      pages: write
       id-token: write
     steps:
       - name: Checkout repository
