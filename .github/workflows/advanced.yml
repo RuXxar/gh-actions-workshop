@@ -18,9 +18,13 @@ jobs:
   hello-english-job:
     runs-on: ubuntu-latest
     if: inputs.lang-selector == 'English'
-    name: Hello ${{ inputs.message }} 🇬🇧"
+    steps:
+      - name: Print message to terminal
+        run: echo "Hello ${{ inputs.message }}!" 
 
   hello-norsk-job:
     runs-on: ubuntu-latest
     if: inputs.lang-selector == 'Norsk'
-    name: Hei ${{ inputs.message }} 🇳🇴"
+    steps:
+      - name: Print message to terminal
+        run: echo "Hei ${{ inputs.message }}!" 
