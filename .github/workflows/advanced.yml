@@ -7,10 +7,20 @@ on:
         type: string
         description: Input your message
 
+      lang-selector:
+        type: choice
+        description: Choose your language
+        options:
+          - English
+          - Norsk
+
 jobs:
-  hello-message-job:
-    name: Hello message
+  hello-english-job:
     runs-on: ubuntu-latest
-    steps:
-      - name: Print message to terminal
-        run: echo "Hello ${{ inputs.message }}!"
+    if: inputs.lang-selector == 'English'
+    name: Hello ${{ inputs.message }} 🇬🇧"
+
+  hello-norsk-job:
+    runs-on: ubuntu-latest
+    if: inputs.lang-selector == 'Norsk'
+    name: Hei ${{ inputs.message }} 🇳🇴"
