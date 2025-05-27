@@ -20,11 +20,15 @@ jobs:
     if: inputs.lang-selector == 'English'
     steps:
       - name: Print message to terminal
-        run: echo "Hello ${{ inputs.message }}!" 
+        run: echo "Hello ${MESSAGE}!"
+        env:
+          MESSAGE: ${{ inputs.message }} 
 
   hello-norsk-job:
     runs-on: ubuntu-latest
     if: inputs.lang-selector == 'Norsk'
     steps:
       - name: Print message to terminal
-        run: echo "Hei ${{ inputs.message }}!" 
+        run: echo "Hei ${MESSAGE}!"
+        env:
+          MESSAGE: ${{ inputs.message }}
